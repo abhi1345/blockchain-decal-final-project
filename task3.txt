@@ -1,0 +1,18 @@
+1. How is web3 used in componentDidMount?
+How does the user connect to the blockchain network?
+This is metamask!
+
+componentDidMount uses web3 to get the users's accounts and contract information.
+The blockchain network is connected to using the MerchToken json file we copy-pasted.
+We get the tags and merchTypes from this network.
+
+2. pick one function: fetchLoot, addLoot, or buyLoot and explain in detail what it is doing and how it works.
+Every line please
+
+fetchLoot:
+1. We start by initializing 2 empty arrays, available and owned. We also get the variable numTokens from the ethereum contract.
+2. Then, we initialize a loop that runs for numTokens iterations.
+3. At each iteration, we query a token, tokenId, and the owner of the token. We add the token name, price, id, and other information to a data structure.
+4. If the owner is the first user on the state's accounts array, we push this data structure onto the owned array.
+5. If the token is for sale, we push it onto the available array.
+6. After the loop finishes, we update the state with the new available and owned arrays.
